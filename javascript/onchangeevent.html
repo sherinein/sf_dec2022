@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <select id="state" onchange="findState()">
+        <option value="TamilNadu">TamilNadu</option>
+        <option value="Kerala">Kerala</option>
+    </select>
+     <p id="selectedState"> </p>
+    <script>
+        function findState(){
+            let stateName=document.getElementById("state").value;
+            debugger
+            document.getElementById("selectedState").innerHTML="Selected State is "+ stateName;
+          }
+    </script>
+</body>
+</html>

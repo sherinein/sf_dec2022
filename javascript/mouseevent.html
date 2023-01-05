@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let btn=document.querySelector("#btn");
+        btn.addEventListener("click",mouseClicked,false);
+        btn.addEventListener("mouseup",mouseReleased,false);
+        btn.addEventListener("mousedown",mousePressed,false);
+        function mouseClicked(event){
+            console.log("Mouse is clicked");
+        }
+
+        function mouseReleased(event){
+            console.log("Mouse is released");
+        }
+        function mousePressed(event){
+            console.log("Mouse is Pressed");
+        }
+        function lostFocus(){
+           // console.log("firstname lost the focus");
+           alert('firstname lost the focus');
+        }
+
+        </script>
+</head>
+<body>
+    <form>
+        First Name <input type="text" name="firstname" onblur="lostFocus()" value="">
+   
+    <button id="btn" onclick="mouseClicked()" onmouseup="mouseReleased()" onmousedown="mousePressed()">Click</button>
+</form>
+</body>
+</html>

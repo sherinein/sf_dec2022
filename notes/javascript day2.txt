@@ -1,0 +1,47 @@
+datatypes
+conditional statement
+looping
+function
+Form submission --> validate the input
+
+function
+--------
+
+arrow function --> React Js ,Angular
+
+var ,let, const (fixed)
+
+use let keyword because its improved version of var keyword
+
+events
+-----
+mouseevent
+----------
+	
+onclick
+ondblclick
+mouseup
+mousedown
+onmousemove
+mouseover
+mouseout
+mouseenter
+mouseleave
+
+register mouse event handler
+------------------------------
+Step 1: first select the element
+tag  <p> </p> ---> getElementById() or getElementByName() or querySelector()
+Step 2: register the mouse event  using addEventListener()
+
+
+blur event -->
+
+onchange event
+
+debugging
+---------
+ console.log()
+ debugger
+
+

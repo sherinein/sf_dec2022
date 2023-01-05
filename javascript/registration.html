@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <script>
+        function validate(){
+            var email=document.myform.email.value;
+            var password=document.myform.password.value;
+            var phone=document.myform.phone.value;
+            // validation - All fields are mandatory
+            if(email==""){
+                alert("Email is mandatory");
+                document.myform.email.focus();
+                return false;
+            }else if(password==""){
+                alert("Password is mandatory");
+                document.myform.password.focus();
+                return false;
+            }else if(phone==""){
+                alert("Phone Number is mandatory");
+                document.myform.phone.focus();
+                return false;
+            }
+
+            // Email Validation 
+
+            // Password validation
+
+            // Phone validation
+            if(!(phone.match(/\d/g).length===10)){
+                alert("Phone Number should be numberic and should have 10 digits");
+                document.myform.phone.focus();
+                return false;
+            }
+
+        }
+    </script>
+</head>
+<body>
+    
+    <h3>User Registration Form</h3>
+    <form name="myform"  onsubmit="return validate()" action="signin" method="post">
+        <table>
+            <tr>
+                <td> Email </td>
+                <td> <input type="text" name="email"/></td>
+            </tr>
+        </table>
+   
+        Password <input type="password" name="password"/>
+        Phone <input type="text" name="phone"/>
+        <input type="submit" value="Register"/>
+    </form>
+</body>
+</html>

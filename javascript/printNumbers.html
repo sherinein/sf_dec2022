@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Numbers</title>
+    <script language="javascript">
+          var num=parseInt(prompt("Enter a number:"));
+       for(i=0;i<=num;i++){
+              if(i%3==0){
+                  continue;
+              }
+              document.write(i);
+              document.write(" ");
+          } 
+        i=0;
+          while(i<=num){
+                if(i%3==0){
+                    i++;
+                    continue;
+                }
+                document.write(i++);
+                document.write(" ");
+          }
+
+          i=0;
+          do{
+              if(i%3==0){
+                  i++;
+                  continue;
+              }
+              document.write(i++);
+            document.write(" ");
+          }while(i<=num);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

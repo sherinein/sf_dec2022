@@ -1,0 +1,140 @@
+Html5 
+-----
+	web page --> document
+		Title
+		paragraph
+
+Html
+----
+<p></p>
+<div class="header">
+	<div class="nav">
+
+	</div>
+</div>
+
+
+<b>
+<i>
+
+
+Sematic tag
+-----------
+Html Structure of the Web page
+<body>
+<header>
+	<nav> </nav>
+</header>
+<main>
+	<section>
+	</section>
+	<section>
+	</section>
+	<section>
+		<article></article>
+	</section>
+
+</main>
+<footer>
+</footer>
+</body>
+
+Basic Tag
+Create Table
+Create Form
+	signin ,signup
+webpage (nav bar ,section)
+
+CSS3 --> Selector 
+
+
+VSCode 
+------
+Live Server
+Prettier - Code formatter
+
+
+
+<!DOCTYPE html> ---> html 5
+
+<html lang="en">
+<head>
+	meta 
+	title
+	script ----->js
+	style ----->css
+	link ----> refer other document (js,css,.)
+	
+</head>
+
+<body></body>
+
+</html>
+
+unordered list vs order list
+
+Block level elements 
+--------------------
+<div>
+<article>
+<address>
+<aside>
+<blockquote>
+<p>
+<h1> -- <h6>
+<nav>
+<table>
+<section>
+<header>
+<footer>
+
+
+Inline elements
+-------------------
+<input>
+<b>
+<br>
+<button>
+
+get --> data will go via url
+	www.sundramfinance.com/signin?username=sherine&password=sfdsd
+
+post -->data will go via form data
+Form data
+	username: sherine
+	password: sfdsd
+
+
+
+input type
+----------
+text
+password
+submit
+button
+color
+date
+email
+file
+hidden ---> url form field or  mvc
+image
+month
+radio
+time
+..................
+
+3 types
+-----------
+inline style ---> style
+internal style <style> <style>
+external style ---> main.css
+
+
+
+
+
+
+
+
+
+ 

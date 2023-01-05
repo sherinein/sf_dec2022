@@ -1,0 +1,228 @@
+Responsive web page
+--------------------
+
+html
+-----
+ layout
+  table -> fixed 
+  flexbox
+  grid
+  float
+
+  bootstrap 4 --> support responsive web page
+		grid ,flexbox
+
+ flexbox
+
+selector
+--------
+tag or element selector  p { } ,div{ } 
+All selector           *
+id selector  <div id="demo">  #demo { }
+class selector <div class="sub-heading">   .sub-heading{ }
+attribute selector [name]{ }
+
+<input type="text" name="username"/>
+
+pseudo class or pseudo element selector
+ a:hover{ } ,a:active { } 
+
+javascript
+-------------
+dynamic value
+client side scripting ,server side
+validation done by javascript
+
+
+1) Client side validation
+2) Manipulate the html pages
+3) user notification
+4) back-end data loading
+5)Presentation --> JavaScript ---> html
+6) Node JS ( browser -->html,css,javascript) --> Runtime Environment 
+	connect with server
+
+
+Variables
+conditions
+loop
+functions
+form validation
+events
+	mouse event
+	keyword event
+
+
+ onsubmit -->
+
+ES6
+--
+
+
+Java 
+int,long, float,byte,short,double ----> data type
+int age=20;
+double price=200.50;
+
+String name="Nirmala";
+
+Java Script
+-----------
+number 
+string 
+boolean
+null
+undefined
+any (may be number,string,boolean,null,undefined) --> testing purpose
+
+int age=20;
+
+var age=20; // number
+var name="nirmala";//string
+var price=3000.50; //number
+var salary; // undefined 
+var city=null; // null 
+var available=true; // boolean
+-----------
+
+conditional statement
+---------------------
+
+if condition
+if else
+nested if else
+
+---------------
+----------------
+---------------
+----------------
+---------------
+veg or nonveg
+--------------
+if(food==veg){
+	veg food
+}elseif(food=nonveg){
+	nonveg food
+}else{
+	snacks
+}
+
+
+if(condition){
+ .................true 
+}
+
+
+if(condition){
+ true
+}else{
+ false-->
+}
+
+
+"12" ---> 12
+"sdfsdf"---> sdfsdf
+
+NaN-->Not a Number
+
+
+Even or Odd
+Prime or not
+------------
+------------
+deposit
+withdrawl
+bankstatement
+
+
+
+
+function deposit(){
+------------------------
+----------------------
+------------------
+}
+function withdrawl(){
+-----------------------
+}
+function bankStatement(){
+-----------------------
+}
+
+deposit();
+
+
+Task
+-----
+signin 
+Registration form  (table)
+-------------------
+ firstname (text)
+ lastname (text)
+ email (email)
+ dateofBirth (date)
+ mobilenumber (number or text)
+ department --> select box (engg )
+ gender (radio)
+ hobbies (checkbox)
+................
+
+table   -->fixed 
+------
+<body>
+<form>
+ 	<table>
+		<tr>
+		<td>FirstName</td>
+		<td><input type="text" name="firstname" value="" ></td>
+		<td>LastName</td>
+		<td><input type="text" name="lastname" value="" ></td>
+		 </tr> -->one row
+		<tr> </tr>
+		<tr> </tr>
+		<tr> </tr>
+
+	</table>
+</form>
+
+</body>
+
+responsive web design
+ 
+ flex box  -->flexible
+----------
+	<body>
+		<div>
+			<div>
+				<div></div>
+				<div> </div>
+			 </div>
+		</div>
+	</body>
+
+grid -->flexible
+-----
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

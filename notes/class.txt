@@ -1,0 +1,47 @@
+int empid=101;
+String ename="Nirmala";
+String desg="Consultant";
+
+
+int empid=102;
+String ename="Sherine";
+String desg="Consultant";
+
+public class Employee{
+	int empid; // property or instance variable or global variable or class variable
+	String ename;
+	String desg;
+
+}
+
+int a; // a- variable  , int -data type
+
+a=10; - store only one value
+
+Employee emp; // emp -reference ,Employee - class type
+
+emp=new Employee(); // object 
+
+Employee emp1=new Employee();
+
+emp1.empid=101;
+emp1.ename="Nirmala";
+emp1.desig="Consultant";
+
+Employee emp2=new Employee();
+emp2.empid=102;
+emp2.ename="Sherine";
+emp2.desig="Consultant";
+
+
+
+
+
+
+
+
+
+
+
+
+

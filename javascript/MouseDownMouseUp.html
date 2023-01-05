@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MouseDownMouseUp</title>
+    <script>
+        function handleMouseDownEvent(x){
+            x.style.color="red";
+            x.style.backgroundColor="yellow";
+            x.innerHTML="MOUSEDOWN";
+        }
+        function handleMouseUpEvent(y){
+            y.style.color="yellow";
+            y.style.backgroundColor="blue";
+            y.innerHTML="MOUSEUP";
+        }
+    </script>
+</head>
+<body>
+   <p onmousedown="handleMouseDownEvent(this)" onmouseup="handleMouseUpEvent(this)">Mouse Down/Mouse Up</p> 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
