@@ -1,0 +1,220 @@
+Intoduction to MySQL
+creating tables
+select and basic querying techniques
+insert statement
+aggregating data
+
+
+altering structures
+deleteing structures
+update statement
+delete statement
+
+Joins
+Advanced Joins
+nested queries
+working with date and time
+
+
+create database sfdb;
+use sfdb;
+drop database sfdb;
+create table if not exists employee(
+		empid int(10) auto_increment primary key,
+		first_name varchar(200) not null,
+        last_name varchar(200) not null,
+        email varchar(20) not null,
+        joining_date date,
+        created_at timestamp default current_timestamp
+)engine=innodb;
+
+insert into employee(first_name,last_name,email,joining_date) values('Antony','Prakash','tony@gmail.com','2023-01-06');
+insert into employee(first_name,last_name,email,joining_date) values('Athi','Devaraj','athi@gmail.com','2023-01-06');
+
+insert into employee(first_name,last_name,email,joining_date) values ('Nirmala','Sherine','sherine@gmail.com','2023-01-06'),('Renisha','Lynette','lynet@gmail.com','2023-01-06');
+
+select * from employee;
+
+create table if not exists trainee(
+		empid int(10) auto_increment primary key,
+		first_name varchar(200) not null,
+        last_name varchar(200) not null,
+        email varchar(20) not null,
+        joining_date date,
+        created_at timestamp default current_timestamp
+)engine=innodb;
+
+insert into trainee(first_name,last_name,email,joining_date)
+select first_name,last_name,email,joining_date
+from employee;
+
+select * from trainee;
+
+create table stats(
+	totalEmployee int,
+    totalTrainee int
+);
+
+insert into stats(totalEmployee,totalTrainee) 
+         values ( 
+         (select count(*) from employee),
+         (select count(*) from trainee)
+                );
+
+select * from stats;
+
+select * from employees;
+select first_name,joining_date from employee;
+
+use classicmodels;
+select * from employees;
+select * from employees where jobTitle='Sales Rep';
+select * from customers;
+
+select * from customers where creditLimit > 80000;
+
+select * from customers where creditLimit > 80000 AND city='NYC';
+
+select * from customers where creditLimit > 80000 OR city='NYC';
+
+select * from customers;
+
+
+
+
+select * from customers where country not in ('France','USA','Germany');
+
+select customerName ,creditLimit from customers where creditLimit not between 80000 and 100000;
+select customerName ,creditLimit from customers where creditLimit>=80000 and creditLimit<100000;
+select * from customers where creditLimit > 80000 OR city='NYC';
+
+select * from customers;
+
+Filter data
+Where 
+ AND ,OR ,IN ,NOT IN, BETWEEN ,NOT BETWEEN ,LIKE , LIMIT ,IS NULL
+
+LIKE
+ wildcard  % ,_
+
+
+select * from customers where customerName like 'a%';
+select  * from customers where customerName like '%s';
+select  * from customers where customerName like '%s%';
+select  * from customers where contactFirstName like 'J__f';
+select * from customers where customerName not like 'a%';
+
+
+select  contactFirstName,creditLimit 
+from customers 
+order by creditLimit desc limit 0,3;
+
+select distinct contactFirstName  from customers;
+
+select distinct contactFirstName, state 
+from customers 
+where state is not null
+order by state;
+
+select distinct contactFirstName, state
+from customers ;
+use sfdb;
+select * from employee;
+insert into employee(first_name,last_name,email,joining_date) values('Antony','Prakash','tony@gmail.com','2023-01-06');
+
+select distinct first_name,last_name from employee;
+
+insert into employee(first_name,last_name,email,joining_date) values('Antony','Raj','raj@gmail.com','2023-01-05');
+select * from orders;
+
+select status ,count(*) from orders 
+group by status;
+
+select count(*) from orders;
+select * from payments where paymentDate='2004-12-17';
+
+select customerNumber ,sum(amount) 
+from payments
+group by customerNumber;
+
+select * from payments where amount>80000;
+
+select customerNumber ,amount 
+from payments
+where amount>80000
+group by customerNumber
+order by amount;
+
+select * from orderdetails;
+
+select ordernumber ,sum(quantityOrdered *priceEach) as total
+from orderdetails
+group by ordernumber
+having total>1000;
+
+ 
+ filter based on amount >10000 with in group
+ 
+ 
+order by
+---------
+desc
+asc
+
+
+distinct
+----------------------------------------------------
+Database
+--------
+create database
+drop database
+use database
+
+create table
+
+
+querying data
+------------
+select 
+
+sorting
+--------
+order by
+
+filtering data
+-------------
+Where 
+ AND ,OR ,IN ,NOT IN, BETWEEN ,NOT BETWEEN ,LIKE , LIMIT ,IS NULL
+
+LIKE 
+distinct
+
+grouping 
+---------
+	group by
+      having
+
+Aggregate function
+-------------------
+count
+sum
+avg
+min
+max
+
+
+select --->from -->where --->group by--> having ---> order by
+
+
+
+
+
+
+
+
+
+--------------------------------------------
+Join
+Subquery
+
+

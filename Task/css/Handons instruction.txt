@@ -1,0 +1,51 @@
+CSS Selector Exercise
+----------------------
+Starting with the solution from the HTML 2 exercise, add CSS rules to the webpage so that it looks like the screenshot below. 
+All the CSS rules should have "color: red;" or "color:blue;" as the property-value pair, 
+and just use different selector types to style the different parts of the page. 
+Note that there are often multiple ways to achieve the same result in CSS. 
+Try to use a mix of the different types of selectors- id, class, position in document, etc. 
+
+
+CSS 1: Properties Exercise
+Starting with the solution from the selectors exercise, add property value pairs to the CSS rules so that the page looks like the screenshot below. 
+
+
+CSS 2: Grouping Exercise
+The goal is to create a webpage that looks like the screenshot below. Follow these steps:
+•	Copy this webpage. 
+•	Create a div for the paragraphs and style it appropriately. 
+•	Create a span for the first sentence of each paragraph, and style appropriately. 
+•	Resize the image to match the width of the div. 
+
+CSS 2: Box Model Exercise
+The goal is to create a webpage that looks like the screenshot below. Follow these steps:
+•	Copy this webpage (the solution from the first exercise). 
+•	Add appropriate margin, border, and padding to the text div. 
+•	Add appropriate border to the image. 
+•	Create a div for all of the page content and center that in the middle of the page. 
+•	Add appropriate border and padding to that div. 
+
+CSS 2: Layout Exercise
+The goal is to create a webpage that looks like the one below. Follow these steps: 
+•	Copy this webpage (the solution from the CSS properties exercise). 
+•	Add a div for all of the content. Add styles to that div so it is centered on the page and has appropriate border and padding. 
+•	Add a div for the header (the logo). Add styles to that div so the image is centered. 
+•	Add a div for the footer links. Add styles to that div so that the links are centered and it has appropriate border, padding, and margin. 
+•	Add a div for the locations list. Add styles to that div so that it floats to the right and has appropriate border, padding, and color. 
+•	Bonus: Add a div with 00s and 11s. Add styles to that div so that it is positioned absolutely just above the bottom of the page and is below the main div. 
+
+CSS 2: Positioning Exercise
+The goal is to use the CSS position property to create a webpage that looks like the one below. 
+Here's what it looks like with a window width of 800x530: 
+Here's what it looks like when the window is 400x475 - notice how elements resize:
+
+Here are recommended steps for making this happen: 
+•	Create a blank web page with just html, head, body, and a style tag. 
+•	Change the background of the page to be a sky blue and have a background image of clouds. 
+•	Create a div for the grass - position it at the bottom and give it an appropriate height. 
+•	Create a div for the "Farm Party!" banner - position it near the top center area, and style the text so that it's red. For a bonus, use a fun custom font (like from Google Web Fonts) and give it the appearance of a black stroke. 
+•	For each of the images shown, search for an appropriate image on Google Image search - it doesn't have to be the exact same. Try searches like "sheep animated gif" and if you need to, restrict the results to just "clip art". When you find the image, create a img for it on the page. 
+•	Position each of the img elements appropriately. The sheep should be around the bottom left, the cow should be on the horizon, the dude should be dancing in the middle, the tree should be on the front right, and the sun should be around the upper right. 
+•	As a bonus, position a picture of your face on top of the dude, and watch yourself have a farm party! 
+
