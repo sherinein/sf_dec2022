@@ -1,0 +1,34 @@
+Exercises: Functions
+----------------------
+These exercises are based on the variables exercises, so you may start from those (your solutions or ours) or start from scratch.
+
+The Fortune Teller
+-------------------
+Why pay a fortune teller when you can just program your fortune yourself?
+
+Write a function named tellFortune that:
+takes 4 arguments: number of children, partner's name, geographic location, job title.
+outputs your fortune to the screen like so: "You will be a X in Y, and married to Z with N kids."
+Call that function 3 times with 3 different values for the arguments.
+
+The Age Calculator
+------------------
+Forgot how old you are? Calculate it!
+
+Write a function named calculateAge that:
+takes 2 arguments: birth year, current year.
+calculates the 2 possible ages based on those years.
+outputs the result to the screen like so: "You are either NN or NN"
+Call the function three times with different sets of values.
+Bonus: Figure out how to get the current year in JavaScript instead of passing it in.
+
+The Lifetime Supply Calculator
+--------------------------------
+Ever wonder how much a "lifetime supply" of your favorite snack is? Wonder no more!
+
+Write a function named calculateSupply that:
+takes 2 arguments: age, amount per day.
+calculates the amount consumed for rest of the life (based on a constant max age).
+outputs the result to the screen like so: "You will need NN to last you until the ripe old age of X"
+Call that function three times, passing in different values each time.
+Bonus: Accept floating point values for amount per day, and round the result to a round number.

@@ -1,0 +1,76 @@
+Exercises: Events
+-----------
+Mad Libs
+-----------
+Start with this webpage, which has several input elements and a button:
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title></title>
+ </head>
+ <body>
+ 
+ <h1>Mad Libs</h1>
+ 
+ <ul>
+  <li>Noun: <input type="text" id="noun">
+  <li>Adjective: <input type="text" id="adjective">
+  <li>Someone's Name: <input type="text" id="name">
+ </ul>
+ 
+ <button id="lib-button">Lib it!</button>
+  
+ <div id="story"></div>
+  
+ </body>
+</html>
+Add a script tag to the bottom of the page for your code.
+Add an event listener to the button so that it calls a makeMadLib function when clicked.
+In the makeMadLib function, retrieve the current values of the form input elements, make a story from them, and output that in the story div (like "Pamela really likes pink cucumbers.")
+
+
+
+The Cat Walk
+--------------
+Start with this webpage, which has an img of a cat walking, and JavaScript functions that animate the cat across the screen.
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title>Cat Walk</title>
+ </head>
+ <body>
+  
+  <button id="start-button">Start</button>
+  <button id="speed-button">Go Faster!</button>
+  <button id="stop-button">Stop</button>
+  <div id="info"></div>
+  
+  <img style="position:absolute; left: 0px; top: 80px;" src="http://www.anniemation.com/clip_art/images/cat-walk.gif">
+
+  <script>
+var movePixels = 10;
+var delayMs = 50;
+var catTimer = null;
+function catWalk() {
+  var img = document.getElementsByTagName('img')[0];
+  var currentLeft = parseInt(img.style.left);
+  img.style.left = (currentLeft + movePixels) + 'px';
+  if (currentLeft > (window.innerWidth-img.width)) {
+    img.style.left = '0px';
+  }
+}
+function startCatWalk() {
+  catTimer = window.setInterval(catWalk, delayMs);
+}
+  </script>
+
+ </body>
+</html>
+(For all of these, you shouldn't need to touch the original code - just add code below.)
+Add an event listener to the start button, so that the cat starts moving across the screen when its clicked.
+Add an event listener to the stop button, so that the cat stops moving when clicked.
+Add an event listener to the speed button, so that the cat moves faster when it's clicked.
+
+Bonus: Disable the start/stop/faster buttons at the appropriate times (e.g. the user shouldn't be able to click "stop" if the cat isn't currently moving.)

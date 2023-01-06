@@ -1,0 +1,125 @@
+create table doctor_master
+(
+doctorid Varchar(5) Primary Key, 
+doctorname Varchar(15) Not Null, 
+dept Varchar(15) Not  Null
+); 
+
+
+insert into doctor_master values('D0001','Ram','ENT');
+insert into doctor_master values('D0002','Rajan','ENT');
+insert into doctor_master values('D0003','Smita','Eye');
+insert into doctor_master values('D0004','Bhavan','Surgery');
+insert into doctor_master values('D0005','Netra','Surgery');
+insert into doctor_master values('D0006','Shesadri','Surgery');
+
+
+
+create table room_master
+(
+room_no Varchar(5) Primary Key, 
+room_type Varchar(10) Not Null, 
+status Varchar(10) Not Null 
+);
+
+insert into room_master values('R0001','AC','Occu');
+insert into room_master values('R0002','Suite','Vacnt');
+insert into room_master values('R0003','NonAC','Vacnt');
+insert into room_master values('R0004','NonAC','Occu');
+insert into room_master values('R0005','AC','Vacnt');
+insert into room_master values('R0006','AC','Occu');
+
+
+create table patient_master
+(
+pid Varchar(5) Primary Key,
+name Varchar(20) Not Null, 
+age int Not Null, 
+weight int Not Null, 
+gender Varchar(10) Not null, 
+address Varchar(50) Not Null, 
+phoneno varchar(10) Not Null, 
+disease Varchar(50) Not Null, 
+doctorid Varchar(5) Not Null,
+constraint patient_master_doctorid_fk foreign key(doctorid) references doctor_master(doctorid)
+);
+
+
+
+insert into patient_master values('P0001','Gita',35,65,'F','Chennai','9867145678','Eye Infection','D0003');
+insert into patient_master values('P0002','Ashish',40,70,'M','Delhi','9845675678','Pain in Stomach','D0004');
+insert into patient_master values('P0003','Radha',25,60,'F','Chennai','9867166678','Pain in heart','D0005');
+
+
+create table room_allocation
+(
+room_no varchar(5),
+pid varchar(5),
+adm_date date,
+release_date date,
+constraint  room_allocation_room_no_fk foreign key(room_no) references room_master(room_no),
+constraint room_allocation_pid_fk foreign key(pid) references patient_master(pid)
+);
+
+
+insert into room_allocation values('R0001','P0001','2012-10-15','2012-10-26');
+insert into room_allocation values('R0002','P0002','2012-11-15','2012-11-26');
+insert into room_allocation values('R0002','P0003','2012-12-01','2012-12-30');
+insert into room_allocation values('R0003','P0001','2013-01-01','2013-01-30');
+
+
+create table bill_payment
+(
+billid varchar(5) primary key,
+pid varchar(5),
+amount float(7,2),
+constraint bill_payment_pid_fk foreign key(pid) references patient_master(pid)
+);
+
+
+insert into bill_payment values('B0001','P0001',1200.56);
+insert into bill_payment values('B0002','P0002',3200.49);
+insert into bill_payment values('B0003','P0003',4200.49);
+insert into bill_payment values('B0004','P0004',7200.49);
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+1) Display the patient_id, patient_name , phone number, ( if phone number is not there display address) for the people who are staying more then 10 days.
+2)  Display the patient_id, patient_name, phone number( +91-999-999-9999 format) , type_of_ailment .
+    type of ailement is decided with the number of days stay in hospital.
+    if stay <=5   ---- Minor
+    if stay >5 and <=15 days ----Medium
+    if stay >15 days ---- Major
+3) Display the doctor_id and doctor name who is treating maximum patients.
+4) Display the patients who were admitted in the month of january.
+5) Display the patient_id and patient_name who paid more then once.
+6) Display the doctor_id, doctor_name and count of patients. Display the data in descending order of the cont_of_patients.
+7) Display the room_no, room_type which are allocated more then once.
+8) Display the room_no, room_type which are allocated more then once to the same patient.
+9) display the patient_id,patient_name, doctor_id, doctor_name, room_id, room_type, adm_date, bill_id, amount . Amount should be rounded of.
+10) Display the patient_id, patient_name, billid, amount. Amount should be rounded of to single place of decimal.
+11) Display the room_no which was never allocated to any patient.
+12) Display the the doctors_id who never treated any patients.
+13) The depatment which are having the maximum number of doctors.
+14) Count the number of male and female patients.
+15) Count the %age of male and female
+  
+ MALE 20% FEMALE 80%
+   
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
