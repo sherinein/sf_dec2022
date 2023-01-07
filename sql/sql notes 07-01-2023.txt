@@ -1,0 +1,406 @@
+use sfdb;
+
+create table department(
+	deptid int(10) auto_increment primary key,
+	deptname varchar(25)
+);
+
+insert into department(deptname) values('Sales'),('HR'),('Admin');
+
+insert into department(deptname) values('Electrical');
+insert into department(deptid,deptname) values(4,'Electrical'); 
+
+
+select * from department;
+
+drop table department;
+drop table employee;
+
+create table employee(
+		empid int(10) auto_increment primary key, 
+		first_name varchar(200) ,
+		last_name varchar(200), 
+		email varchar(20) ,
+		joining_date date ,
+		created_at timestamp default current_timestamp,
+        deptid int(20),
+        constraint fk_deptid
+        foreign key(deptid) references department(deptid));
+drop table employee;
+create table department(
+		deptid int(20) auto_increment primary key,
+        deptname varchar(30) not null
+);
+        
+insert into department(deptname) values('Sales'),('HR'),('Admin');
+insert into department(deptname) values('Developer');
+insert into department(deptname) values('Developer');
+
+select * from department;
+
+insert into employee(first_name,last_name,email,joining_date,deptid)
+value('sanapathi','sowjanya','sowjanya@gmail.com','2022-12-15', 4);
+
+select * from employee;
+insert into employee(first_name,last_name,email,joining_date,deptid)
+value('Raja','Surya','surya@gmail.com','2022-12-15', 4);
+insert into employee(first_name,last_name,email,joining_date,deptid)
+value('Roshan','David','david@gmail.com','2022-12-15', 4);
+insert into employee(first_name,last_name,email,joining_date,deptid)
+value('Arun','prakash','arun@gmail.com','2022-12-15', 4);
+insert into employee(first_name,last_name,email,joining_date,deptid)
+value('Hemanth','Reddy','hemanth@gmail.com','2022-12-15', 4);
+insert into employee(first_name,last_name,email,joining_date,deptid)
+value('Gokul','Hari','gokul@gmail.com','2022-12-15', 4);
+
+select * from employee;
+insert into employee(first_name,last_name,email,joining_date,deptid)
+value('Bushra','Shereen','Shereen@gmail.com','2022-12-15', 2);
+
+insert into employee(first_name,last_name,email,joining_date,deptid)
+value('Malyala','Maneesha','Shereen@gmail.com','2022-12-15', 3);
+
+
+select * from department;
+select * from employee;
+
+insert into employee(first_name,last_name,email,joining_date)
+value('Hemanth','Dasari','hemanth@gmail.com','2022-12-15');
+
+select * from department;
+select * from employee;
+
+select e.first_name,e.last_name ,d.deptname
+from employee e
+inner join department d
+where e.deptid=d.deptid and e.joining_date<'2022-12-14';
+
+
+select e.first_name,e.last_name ,d.deptname
+from employee e
+inner join department d
+using(deptid);
+
+
+insert into employee(first_name,last_name,email,joining_date,deptid)
+value('Narvekar','aajun','aajun@gmail.com','2022-12-12',2);
+
+
+select * from employee;
+
+
+select e.first_name,e.last_name ,d.deptname
+from employee e
+left join department d
+using(deptid)
+where deptid is NULL;
+
+select e.first_name,e.last_name ,d.deptname
+from employee e
+right join department d
+using(deptid);
+
+select e.first_name,e.last_name ,d.deptname
+from employee e
+right join department d
+using(deptid)
+where deptid is NULL;
+
+select e.first_name,e.last_name ,d.deptname
+from employee e
+cross join department d
+using(deptid);
+
+
+select * from employee;
+
+update employee set email='maneesha@gmail.com' where empid=8;
+
+delete from employee where empid=11;
+
+select * from employee_details;
+
+select * from employee;
+
+Export data into csv file
+---------------------------
+select * from employee where joining_date<'2022-12-14'
+into outfile 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/employee_records.csv';
+
+
+select * from employee where joining_date<'2022-12-14'
+into outfile 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/employee_records1.csv'
+fields enclosed by '"'
+terminated by ';'
+escaped by '"'
+lines terminated by '\r\n';
+
+
+Import data from csv file
+--------------------------
+Load data infile 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/employee_records.csv'
+into table employee;
+
+
+show variables like 'secure_file_priv';
+
+
++------------------+------------------------------------------------+
+| Variable_name    | Value                                          |
++------------------+------------------------------------------------+
+| secure_file_priv | C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\ |
++------------------+------------------------------------------------+
+1 row in set (0.00 sec)
+
+SubQuery or Nested Query
+------------------------
+
+Query with in Query
+
+
+select * from employee where joining_date<'2022-12-14'
+into outfile 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/employee_records1.csv'
+fields enclosed by '"'
+terminated by ';'
+escaped by '"'
+lines terminated by '\r\n';
+
+create table customer(cid int(20),cname varchar(50));
+
+
+
+
+select * from employee;
+Load data infile 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/employee_records.csv'
+into table employee;
+use classicmodels;
+
+select * from employees;
+select * from offices;
+select lastname,firstname from employees 
+	where officecode in(
+		select  officecode from offices
+        where country='USA'
+);
+
+
+use sfdemodb;
+create table employee(
+		empid int(10) auto_increment primary key, 
+		first_name varchar(200) ,
+		last_name varchar(200), 
+		email varchar(20) ,
+		joining_date date ,
+		created_at timestamp default current_timestamp,
+        deptid int(20));
+drop table employee;
+create table department(
+		deptid int(20) auto_increment primary key,
+        deptname varchar(30) not null
+);
+select * from customer;
+describe customer;
+
+alter table customer modify cid int(50);
+desc employee_details;
+
+
+insert into employee(first_name,last_name,email,joining_date,deptid)
+value('Narvekar','aajun','aajun@gmail.com','2022-12-12',2);
+
+foreign key
+update
+delete
+join 
+ inner join
+ left join
+ right join
+ cross join
+ subquery
+
+	inner query (subquery) output is input for outer query
+
+procedure and functions
+-------------------------
+procedure
+---------
+ write a query with in procedure. whenever we need ,we can call that procedure
+ No need to write query again and again
+
+DELIMITER //
+create procedure getAllUSACustomer()
+BEGIN
+	select * from customers where country='USA';
+END;
+//
+
+To call procedure
+-------------------
+call getAllUSACustomer();
+
+IN ,OUT ,INOUT
+
+
+Example 2
+--------------
+
+DELIMITER //
+create procedure GetCustomerByCountryName(IN countryName varchar(255))
+BEGIN
+	select * from customers where country=countryName;
+END
+//
+
+
+call GetCustomerByCountryName('USA');
+
+call GetCustomerByCountryName('France');
+
+call GetCustomerByCountryName('Germany');
+
+
+
+
+DELIMITER //
+create procedure getOrdersCountByStatus(in orderStatus varchar(255),out total int)
+BEGIN
+	select count(orderNumber) into total from orders where status=orderStatus;
+END;
+//
+call getOrdersCountByStatus('Shipped',@total);
+select @total;
+
+
+
+DELIMITER //
+create procedure insertDevice(in did int,in dname varchar(255))
+begin
+	insert into devices(id,name) values(did,dname);
+end;
+//
+call insertDevice(4,'Laptop');
+
+
+select * from devices;
+
+show procedure status;
+show function status;
+
+
+
+DELIMITER //
+create function getPaymentDateBasedonCheckNo(chkNumber varchar(50))
+returns date
+deterministic
+BEGIN
+	declare payment_date date;
+    select paymentDate into payment_date from payments where checkNumber=chkNumber;
+    return payment_date;
+END;
+//
+
+Check Number : 'HQ336336'
+
+
+select getPaymentDateBasedonCheckNo('HQ336336');
+
+
+Trigger 
+-------
+It is an event .
+It will occur when you are doing insert,delete and update operations
+
+
+1. Before update Trigger
+2. After update Trigger
+3.Before insert Trigger
+4. After insert Trigger
+5. Before delete trigger
+6. after delete trigger
+
+
+
+call ---->withdrawal method (debit amount from your account)
+--->account (balance)
+    update the account
+
+
+
+use sfdb;
+create table customer(acc_no int primary key,cust_name varchar(20),avail_balance decimal);
+
+create table mini_statement(
+		acc_no int,
+        avail_balance decimal,
+        foreign key(acc_no) references customer(acc_no) 
+		on delete cascade
+        );
+        
+insert into customer values(101,'Rahul',10000);
+insert into customer values(102,'Banu',3000);
+
+
+select * from customer;
+
+
+delimiter //
+create trigger update_customer
+before update on customer
+for each row
+begin
+insert into mini_statement values(old.acc_no,old.avail_balance);
+end;
+//
+
+before update on
+after update on
+before insert on
+after insert on
+before delete on
+after delete on
+
+Before update Trigger
+----------------------
+delimiter //
+create trigger update_customer
+before update on customer
+for each row
+begin
+insert into mini_statement values(old.acc_no,old.avail_balance);
+end;
+//
+update customer set avail_balance=avail_balance +5000 where acc_no=101;
+select *from customer;
+select *from mini_statement;
+
+After update Trigger
+--------------------
+
+create table micro_statement(
+		acc_no int,
+        avail_balance decimal,
+        foreign key(acc_no) references customer(acc_no) 
+		on delete cascade
+        );
+        
+
+delimiter //
+create trigger after_update_customer
+after update on customer
+for each row
+begin
+insert into micro_statement values(new.acc_no,new.avail_balance);
+end;
+//
+
+
+update customer set avail_balance=avail_balance +2000 where acc_no=102;
+
+select *from customer;
+select *from mini_statement;
+select * from micro_statement;
+
+
+
+
+
