@@ -1,0 +1,56 @@
+1. Create procedure for getAllEmployee()
+2. inner join
+   orders                orderdetails
+   orderno,shippedDate   quantityOrdered
+
+JavaScript
+------------
+JSON
+----
+	JAvaScript Object Notation
+	key-value pair
+
+JSON
+-----
+{
+"empid":1001,
+ "empname":"Prasanna",
+ "email" :"prasanna@gmail.com",
+ "mobileno":8989343966
+ 
+}
+
+JSON Array
+-----------
+[
+ {"empid":1001,"empname":"Prasanna","email" :"prasanna@gmail.com", "mobileno":8989343966},
+ {"empid":1002,"empname":"Narvekar","email" :"narvekar@gmail.com", "mobileno":8989343986 },
+ {"empid":1003,"empname":"Hrishikesh","email" :"hrishikesh@gmail.com", "mobileno":89895656966 }
+]
+
+["Apple","Orange","Grapes"]
+
+
+ 
+ use strict
+-----------
+
+Cookie
+-------
+
+Regular Expression
+-------------------
+pattern ---> define the rule to  end user
+
+
+
+
+
+
+
+
+
+
+
+
+

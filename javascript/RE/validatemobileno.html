@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function checkValidMobileNumber(mobilenumber){
+                const mobilePattern='/^[6-9]\d{9}$/gi';
+                if(mobilePattern.match(mobilenumber)){
+                    return true;
+                }
+                else{
+                        console.log(mobilenumber);
+                    return false;
+                }
+}
+
+function checkValidEmail(email){
+    const emailPattern=/\S+@\S+\.\S+/;
+    console.log(email);
+    return emailPattern.match(email);
+}
+
+let email=prompt('Enter the email');
+console.log(checkValidEmail(email));
+
+//console.log(checkValidMobileNumber(9003834591));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

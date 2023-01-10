@@ -1,0 +1,61 @@
+Cookies
+--------
+HTTP -->stateless protocol
+     
+Enable the cookie in the browser 
+store data (key value pair) in the browser
+
+
+HTTP 
+-----
+ Request Header
+	cookie 
+ Response Header
+
+Cookie 
+------
+cookie will be created and stored in client-side (or) server-side
+
+
+WebStorage
+-----------
+localStorage --> origin (www.amazon.in)
+	5MB (per origin)
+		---> flipkart (5MB)
+        origin(www.amazon.in) -----> another origin (flipkart)
+
+sessionStorage --> origin (www.amazon.in)
+
+username and password-------------> server (validate) ---> login success
+
+10 page (one module)
+
+
+method
+------
+test()
+exec()
+match()
+matchAll()
+search()
+replace()
+split()
+
+/*function validInput(input){
+    const regex='/^a...s$/';
+    if(regex.match(input))
+    return true;
+    else
+    return false;
+
+}
+
+console.log(validInput('alidas'));*/
+
+
+https://regexr.com/
+
+
+
+
+
