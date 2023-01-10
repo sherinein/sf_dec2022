@@ -1,0 +1,237 @@
+MongoDB
+----------
+Create database
+----------------
+MySQL			MongoDB
+-----	           ----------
+database		 database name :sftestdb
+table               collection   :trainee
+  row or record     document	   :			
+  column             field
+
+
+NoSQL  SQL(RDBMS)
+-----------------
+
+JSON
+
+MongoDB
+-------
+  --> document database
+  --->store JSON format called BSON.
+BSON --> Binary Serialization format
+     ---> used to store documents and make remote procedure calls in mongodb.
+
+ObjectId  (primary key)
+
+port no: 27017
+
+Insert
+-------
+ db.person.insertOne({"name":"Renita","email":"renita@gmail.com","category":"trainee","hobbies":["reading","cooking"]})
+
+
+show collections
+person
+> db.person.insertOne({"name":"Antony","email":"anto@gmail.com","category":"hr","hobbies":["reading","music"]});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("63bd3b0cd65a1b1a4a2037b7")
+}
+> db.person.insertOne({"name":"Akila","email":"akila@gmail.com","category":"trainee","hobbies":["reading","music"]});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("63bd3b43d65a1b1a4a2037b8")
+}
+> db.person.find({category:"hr"})
+{ "_id" : ObjectId("63bd3b0cd65a1b1a4a2037b7"), "name" : "Antony", "email" : "anto@gmail.com", "category" : "hr", "hobbies" : [ "reading", "music" ] }
+
+
+CRUD 
+ C -Create (insert)
+ R -Read   
+ U - Update 
+ D -Delete
+
+Create
+------
+insertOne --> insert one document
+insertMany---> insert one or more document
+Read
+----
+find() --> retrieve document from the collection
+
+{
+ 
+}
+
+insertMany([ 
+	{ }, {} ,{ }
+])
+
+Update
+------
+UpdateOne() --> update single document
+UpdateMany() -->update many document
+replaceOne() --->replace one document
+
+
+> show collections
+person
+> db.person.insertOne({"name":"Antony","email":"anto@gmail.com","category":"hr","hobbies":["reading","music"]});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("63bd3b0cd65a1b1a4a2037b7")
+}
+> db.person.insertOne({"name":"Akila","email":"akila@gmail.com","category":"trainee","hobbies":["reading","music"]});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("63bd3b43d65a1b1a4a2037b8")
+}
+> db.person.find({category:"hr"})
+{ "_id" : ObjectId("63bd3b0cd65a1b1a4a2037b7"), "name" : "Antony", "email" : "anto@gmail.com", "category" : "hr", "hobbies" : [ "reading", "music" ] }
+> db.person.find();
+{ "_id" : ObjectId("63bd3a7ed65a1b1a4a2037b6"), "name" : "Renita", "email" : "renita@gmail.com", "category" : "trainee", "hobbies" : [ "reading", "cooking" ] }
+{ "_id" : ObjectId("63bd3b0cd65a1b1a4a2037b7"), "name" : "Antony", "email" : "anto@gmail.com", "category" : "hr", "hobbies" : [ "reading", "music" ] }
+{ "_id" : ObjectId("63bd3b43d65a1b1a4a2037b8"), "name" : "Akila", "email" : "akila@gmail.com", "category" : "trainee", "hobbies" : [ "reading", "music" ] }
+> db.person.find().pretty();
+{
+        "_id" : ObjectId("63bd3a7ed65a1b1a4a2037b6"),
+        "name" : "Renita",
+        "email" : "renita@gmail.com",
+        "category" : "trainee",
+        "hobbies" : [
+                "reading",
+                "cooking"
+        ]
+}
+{
+        "_id" : ObjectId("63bd3b0cd65a1b1a4a2037b7"),
+        "name" : "Antony",
+        "email" : "anto@gmail.com",
+        "category" : "hr",
+        "hobbies" : [
+                "reading",
+                "music"
+        ]
+}
+{
+        "_id" : ObjectId("63bd3b43d65a1b1a4a2037b8"),
+        "name" : "Akila",
+        "email" : "akila@gmail.com",
+        "category" : "trainee",
+        "hobbies" : [
+                "reading",
+                "music"
+        ]
+}
+> db.person.updateOne({name:"Antony"),{$set:{email:"antony@gmail.com"})
+2023-01-10T16:00:42.841+0530 E  QUERY    [js] uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:34
+> db.person.updateOne({name:"Antony"},{$set:{email:"antony@gmail.com"}})
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+> db.person.find().pretty();
+{
+        "_id" : ObjectId("63bd3a7ed65a1b1a4a2037b6"),
+        "name" : "Renita",
+        "email" : "renita@gmail.com",
+        "category" : "trainee",
+        "hobbies" : [
+                "reading",
+                "cooking"
+        ]
+}
+{
+        "_id" : ObjectId("63bd3b0cd65a1b1a4a2037b7"),
+        "name" : "Antony",
+        "email" : "antony@gmail.com",
+        "category" : "hr",
+        "hobbies" : [
+                "reading",
+                "music"
+        ]
+}
+{
+        "_id" : ObjectId("63bd3b43d65a1b1a4a2037b8"),
+        "name" : "Akila",
+        "email" : "akila@gmail.com",
+        "category" : "trainee",
+        "hobbies" : [
+                "reading",
+                "music"
+        ]
+}
+> db.person.updateMany({category:"trainee"},{$set:{category:"developer"}});
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }
+> db.person.find().pretty();
+{
+        "_id" : ObjectId("63bd3a7ed65a1b1a4a2037b6"),
+        "name" : "Renita",
+        "email" : "renita@gmail.com",
+        "category" : "developer",
+        "hobbies" : [
+                "reading",
+                "cooking"
+        ]
+}
+{
+        "_id" : ObjectId("63bd3b0cd65a1b1a4a2037b7"),
+        "name" : "Antony",
+        "email" : "antony@gmail.com",
+        "category" : "hr",
+        "hobbies" : [
+                "reading",
+                "music"
+        ]
+}
+{
+        "_id" : ObjectId("63bd3b43d65a1b1a4a2037b8"),
+        "name" : "Akila",
+        "email" : "akila@gmail.com",
+        "category" : "developer",
+        "hobbies" : [
+                "reading",
+                "music"
+        ]
+}
+
+Delete
+-------
+deleteOne() --> delete single document
+deleteMany() --> delete multiple document
+
+db.collectionname.deleteOne();
+db.person.deleteOne()
+
+> db.person.deleteOne({name:"Renita"});
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.person.find().pretty();
+{
+        "_id" : ObjectId("63bd3b0cd65a1b1a4a2037b7"),
+        "name" : "Antony",
+        "email" : "antony@gmail.com",
+        "category" : "hr",
+        "hobbies" : [
+                "reading",
+                "music"
+        ]
+}
+{
+        "_id" : ObjectId("63bd3b43d65a1b1a4a2037b8"),
+        "name" : "Akila",
+        "email" : "akila@gmail.com",
+        "category" : "developer",
+        "hobbies" : [
+                "reading",
+                "music"
+        ]
+}
+> db.person.deleteMany(); ---> delete all document
+
+
+
+
+          
+
+
+
